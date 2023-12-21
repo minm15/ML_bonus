@@ -110,7 +110,7 @@ def chat():
     submit_button = driver.find_element(By.ID, 'sendbtn')
     submit_button.click()
     
-    wait = WebDriverWait(driver, 60)  # 60秒超时，根据实际情况调整
+    wait = WebDriverWait(driver, 60)
     wait.until(EC.invisibility_of_element_located((By.ID, 'userinput')))
 
 if __name__ == "__main__":

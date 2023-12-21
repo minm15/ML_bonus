@@ -1,9 +1,9 @@
 # How to use 
 ---
-## set the chromeDriver
+## Set the chromeDriver
 Download the chromeDriver [here](https://googlechromelabs.github.io/chrome-for-testing/)
 
-## subject
+## Subject
 Currently, there is a need to manually adjust the subject.
 Replace the target_subject at line 54 in `main.py`
 

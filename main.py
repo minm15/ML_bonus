@@ -10,8 +10,8 @@ def signIn():
     teamname_input = driver.find_element(By.ID, 'teamname')
     passwd_input = driver.find_element(By.ID,'passwd')
 
-    teamname_input.send_keys('lalala')
-    passwd_input.send_keys('a3bfd7') 
+    teamname_input.send_keys('xxx')
+    passwd_input.send_keys('xxx') 
 
     passwd_input.send_keys(Keys.RETURN)
 
@@ -51,7 +51,7 @@ def chat():
     for prompt in prompt_content:
         chat_type, prompt = prompt.split('@')
         textarea = driver.find_element(By.ID, 'userinput')
-        target_subject = "Should schools prohibit students from utilizing ChatGPT and similar AI tools for completing their assignments?"
+        target_subject = "Is space exploration still important?"
         print(chat_type)
         if chat_type == 'subject':
             prompt = prompt.format(subject=target_subject)

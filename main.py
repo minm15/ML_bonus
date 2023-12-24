@@ -10,8 +10,8 @@ def signIn():
     teamname_input = driver.find_element(By.ID, 'teamname')
     passwd_input = driver.find_element(By.ID,'passwd')
 
-    teamname_input.send_keys('xxx')
-    passwd_input.send_keys('xxx') 
+    teamname_input.send_keys('lalala')
+    passwd_input.send_keys('a3bfd7') 
 
     passwd_input.send_keys(Keys.RETURN)
 
@@ -51,7 +51,7 @@ def chat():
     for prompt in prompt_content:
         chat_type, prompt = prompt.split('@')
         textarea = driver.find_element(By.ID, 'userinput')
-        target_subject = "Is space exploration still important?"
+        target_subject = "Should marijuana be legalized in Taiwan?"
         print(chat_type)
         if chat_type == 'subject':
             prompt = prompt.format(subject=target_subject)
@@ -68,7 +68,10 @@ def chat():
             topicA_text = topicA_elements.text
             prompt = prompt.format(refineA=refineA_text, topicA=topicA_text)
         elif chat_type == 'debateA1':
-            prompt = prompt.format(subject=target_subject)
+            message_elements = driver.find_elements(By.CLASS_NAME, 'agentBmessage')
+            message_element = message_elements[-1]
+            message_text = message_element.text
+            prompt = prompt.format(refineB=message_text, subject=target_subject)
         elif chat_type == 'debateB1':
             message_elements = driver.find_elements(By.CLASS_NAME, 'agentAmessage')
             message_element = message_elements[-1]
